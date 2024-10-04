@@ -26,17 +26,22 @@ function ListGroup() {
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#">
-                  Features
+                  Domain
                 </a>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#">
-                  Pricing
+                  Events
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link disabled" aria-disabled="true">
-                  Disabled
+                <a className="nav-link" href="#">
+                  About
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#">
+                  Our Crew
                 </a>
               </li>
             </ul>
