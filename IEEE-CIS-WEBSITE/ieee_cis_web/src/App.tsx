@@ -1,9 +1,9 @@
-import ListGroup from "./ListGroup";
+import NavBar from "./NavBar";
 
 function App() {
   return (
     <div>
-      <ListGroup />
+      <NavBar />
     </div>
   );
 }
