@@ -1,40 +1,38 @@
+/* This is for nav bar and Event page */
+
 .navbar-nav .nav-link {
-    font-size: 1.1rem; /* Increase font size */
+    font-size: 1.1rem; 
     padding: 1.3rem 3.3rem;
-    margin-right: 50px;  /* Adjust padding if needed */
+    margin-right: 50px; 
   }
-  
-  /* Center align the navbar items */
+
   .navbar-nav {
-    margin-left: auto; /* This pushes the nav items to the left slightly */
-    margin-right: 70px; /* Adjust this value to center the items better */
+    margin-left: auto; 
+    margin-right: 70px; 
   }
   
-  /* Round the logo */
   .navbar-brand img {
-    border-radius: 30%; /* Makes the logo round */
-    width: 70px; /* Adjust width as needed */
+    border-radius: 30%; 
+    width: 70px; 
     height: 70px;
-    margin-left: 30px; /* Adjust height as needed */
+    margin-left: 30px; 
   }
   
-@media (max-width: 768px) { /* Adjust the breakpoint as needed */
+@media (max-width: 768px) { 
   .navbar-nav .nav-link {
-    font-size: 1.2rem; /* Smaller font size for mobile */
-    padding: 0.5rem 1.5rem; /* Less padding for mobile */
+    font-size: 1.2rem; 
+    padding: 0.5rem 1.5rem; 
     margin-right: 20px; 
-    text-align: center;/* Less margin for mobile */
+    text-align: center;
   }
 
-  /* Center align the navbar items */
   .navbar-nav {
-    margin-right: 10px; /* Adjust margin for better centering on mobile */
+    margin-right: 10px;
   }
 
-  /* Round the logo */
-  .navbar-brand img {
-    width: 50px; /* Smaller logo for mobile */
-    height: 50px; /* Smaller logo for mobile */
-    margin-left: 10px; /* Less margin for mobile */
+.navbar-brand img {
+    width: 50px; 
+    height: 50px;
+    margin-left: 10px;
   }
 }
