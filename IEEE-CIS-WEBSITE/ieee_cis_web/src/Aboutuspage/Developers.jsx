@@ -1,37 +1,77 @@
+import React, { useState } from "react"; // Import useState for handling hover effects
+
 const Developers = () => {
   return (
     <div style={containerStyle}>
       <h2 style={headingStyle}>Developers &lt;/&gt;</h2>
       <div style={cardContainerStyle}>
         {DevelopersData.map((data, index) => (
-          <div key={index} style={testimonialWrapperStyle}>
-            <div style={testimonialCardStyle}>
-              <p style={cardTextStyle}>
-                "Coding is the closest thing we have to magic."
-              </p>
-              <div style={profileStyle}>
-                <img
-                  src={data.img}
-                  alt={`Developer ${index + 1}`}
-                  style={imageStyle}
-                />
-                <div>
-                  <h6 style={nameStyle}>Lorem Ipsum</h6>
-                  <span style={nameSubtitleStyle}>Full-Stack Developer</span>
-                </div>
-              </div>
-            </div>
-          </div>
+          <DeveloperCard key={index} data={data} />
         ))}
       </div>
     </div>
   );
 };
 
+// DeveloperCard Component
+const DeveloperCard = ({ data }) => {
+  const [isHovered, setIsHovered] = useState(false); // State for hover effect
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
+  const handleClick = () => {
+    alert(`You clicked on ${data.name}`); // Placeholder action on card click
+  };
+
+  return (
+    <div
+      style={{
+        ...testimonialWrapperStyle,
+        cursor: "pointer", // Change cursor to pointer to indicate it's clickable
+      }}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      onClick={handleClick}
+    >
+      <div
+        style={{
+          ...testimonialCardStyle,
+          transform: isHovered ? "scale(1.05)" : "scale(1)",
+          boxShadow: isHovered ? "0 8px 24px rgba(0, 0, 0, 0.2)" : "0 4px 16px rgba(0, 0, 0, 0.1)",
+        }}
+      >
+        <p style={cardTextStyle}>
+          "Coding is the closest thing we have to magic."
+        </p>
+        <div style={profileStyle}>
+          <img
+            src={data.img}
+            alt={`Developer ${data.name}`}
+            style={{
+              ...imageStyle,
+              transform: isHovered ? "scale(1.1)" : "scale(1)", // Image hover effect
+            }}
+          />
+          <div>
+            <h6 style={nameStyle}>{data.name}</h6>
+            <span style={nameSubtitleStyle}>{data.title}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const DevelopersData = [
-  { img: 'https://randomuser.me/api/portraits/men/1.jpg' },
-  { img: 'https://randomuser.me/api/portraits/women/2.jpg' },
-  { img: 'https://randomuser.me/api/portraits/men/3.jpg' },
+  { img: 'https://randomuser.me/api/portraits/men/1.jpg', name: 'John Doe', title: 'Full-Stack Developer' },
+  { img: 'https://randomuser.me/api/portraits/women/2.jpg', name: 'Jane Smith', title: 'UI/UX Designer' },
+  { img: 'https://randomuser.me/api/portraits/men/3.jpg', name: 'Mike Johnson', title: 'Backend Developer' },
 ];
 
 // Styles
@@ -68,9 +108,7 @@ const testimonialCardStyle = {
   padding: '32px',
   border: '1px solid #ddd',
   fontWeight: '300',
-  boxShadow: '0 4px 16px rgba(0, 0, 0, 0.1)',
   transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-  cursor: 'pointer',
 };
 
 const cardTextStyle = {
@@ -106,16 +144,6 @@ const nameSubtitleStyle = {
   fontSize: '0.875rem',
   fontStyle: 'italic',
   color: '#777',
-};
-
-testimonialCardStyle[':hover'] = {
-  transform: 'scale(1.05)',
-  boxShadow: '0 8px 24px rgba(0, 0, 0, 0.2)',
-};
-
-
-imageStyle[':hover'] = {
-  transform: 'scale(1.1)',
 };
 
 export default Developers;
