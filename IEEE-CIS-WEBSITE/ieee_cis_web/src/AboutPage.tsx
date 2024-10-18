@@ -11,6 +11,7 @@ import Founder from './Aboutuspage/Founder';
 const AboutPage = () => {
   return (
     <div className="about-page">
+      
       <HeroSection />
       <Developers />
       <Founder />

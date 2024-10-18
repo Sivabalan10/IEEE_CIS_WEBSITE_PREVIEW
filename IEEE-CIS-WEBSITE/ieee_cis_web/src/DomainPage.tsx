@@ -1,8 +1,15 @@
 // DomainPage.tsx
 import React from "react";
+// @ts-ignore
+import HeroSection from './Domainpage/HeroSection';
+// @ts-ignore
+import CardSection from './Domainpage/CardSection';
 
 const DomainPage = () => {
-  return <h1>This is the Domain Page</h1>;
+  return(
+    <><HeroSection />
+    <CardSection /></>
+  )
 };
 
 export default DomainPage;
