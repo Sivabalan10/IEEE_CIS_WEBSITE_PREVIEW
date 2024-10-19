@@ -1,4 +1,3 @@
-// App.tsx
 import React, { useState, useEffect } from "react";
 import NavBar from "./NavBar";
 import HomePage from "./HomePage";
@@ -6,6 +5,8 @@ import DomainPage from "./DomainPage";
 import EventsPage from "./EventsPage";
 import AboutPage from "./AboutPage";
 import CrewPage from "./CrewPage";
+import Footer from "./Footer";
+import BackgroundAnimation from "./BackgroundAnimation"; // Import the new component
 import "./App.css";
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
   useEffect(() => {
     const handleHashChange = () => {
       const path = window.location.pathname;
-
+      console.log(path);
       switch (path) {
         case "/domain":
           setCurrentPage(<DomainPage />);
@@ -34,9 +35,8 @@ function App() {
       }
     };
 
-    // Listen for changes in the URL
     window.addEventListener("popstate", handleHashChange);
-    handleHashChange(); // Call it initially
+    handleHashChange();
 
     return () => {
       window.removeEventListener("popstate", handleHashChange);
@@ -45,8 +45,10 @@ function App() {
 
   return (
     <div>
+      <BackgroundAnimation /> {/* Add the background animation component */}
       <NavBar />
       {currentPage}
+      <Footer />
     </div>
   );
 }

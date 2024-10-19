@@ -1,0 +1,25 @@
+.wave {
+    position: absolute; /* Absolute positioning to avoid pushing content */
+    bottom: 0; /* Align it at the bottom of the footer */
+    left: 0; /* Align it to the left */
+    overflow: hidden; /* Hide overflow */
+    width: 100%; /* Full width */
+    height: 100px; /* Height of the wave */
+  }
+  
+  .wave path {
+    animation: wave 4s ease-in-out infinite; /* Animation to create a wave effect */
+  }
+  
+  @keyframes wave {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(-20px); /* Move left */
+    }
+    100% {
+      transform: translateX(0); /* Move back to original position */
+    }
+  }
+  

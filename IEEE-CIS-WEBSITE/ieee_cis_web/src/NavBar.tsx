@@ -1,4 +1,3 @@
-// NavBar.tsx
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
@@ -6,8 +5,10 @@ import "./App.css";
 import logo from "./assets/logo.jpg";
 
 function NavBar() {
+  const currentPath = window.location.pathname;
+
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <nav className="navbar navbar-expand-lg fixed-top custom-navbar">
       <div className="container-fluid">
         <a className="navbar-brand" href="/">
           <img
@@ -16,6 +17,13 @@ function NavBar() {
             style={{ width: "40px", height: "40px" }}
           />{" "}
         </a>
+        <h1
+          style={{ marginLeft: "10px", fontSize: "1.5rem", lineHeight: "40px" }}
+        >
+          <b>
+            <i>IEEE CIS REC</i>
+          </b>
+        </h1>
         <button
           className="navbar-toggler"
           type="button"
@@ -33,27 +41,50 @@ function NavBar() {
         >
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="/">
+              <a
+                className={`nav-link ${currentPath === "/" ? "active" : ""}`}
+                href="/"
+              >
                 Home
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/domain">
+              <a
+                className={`nav-link ${
+                  currentPath === "/domain" ? "active" : ""
+                }`}
+                href="/domain"
+              >
                 Domain
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/events">
+              <a
+                className={`nav-link ${
+                  currentPath === "/events" ? "active" : ""
+                }`}
+                href="/events"
+              >
                 Events
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/about">
+              <a
+                className={`nav-link ${
+                  currentPath === "/about" ? "active" : ""
+                }`}
+                href="/about"
+              >
                 About
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/crew">
+              <a
+                className={`nav-link ${
+                  currentPath === "/crew" ? "active" : ""
+                }`}
+                href="/crew"
+              >
                 Our Crew
               </a>
             </li>
